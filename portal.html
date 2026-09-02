@@ -31,7 +31,7 @@
     .hero {
       background: linear-gradient(135deg, var(--primary) 0%, #16213e 100%);
       color: white;
-      padding: 60px 20px 80px;
+      padding: 50px 20px 70px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -52,12 +52,12 @@
       background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
       border-radius: 50%;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
     .logo-wrap {
-      width: 90px; height: 90px;
+      width: 80px; height: 80px;
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
       border-radius: 50%;
-      margin: 0 auto 20px;
+      margin: 0 auto 16px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -66,12 +66,16 @@
     }
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
+      50% { transform: translateY(-6px); }
     }
-    .logo-wrap svg { width: 50px; height: 50px; }
-    .hero h1 { font-size: 28px; font-weight: 800; margin-bottom: 8px; line-height: 1.4; }
-    .hero p { font-size: 16px; opacity: 0.75; font-weight: 300; }
-    .container { max-width: 1100px; margin: -40px auto 0; padding: 0 20px 60px; position: relative; z-index: 2; }
+    .logo-wrap svg { width: 44px; height: 44px; }
+    .hero h1 { 
+      font-size: 26px; 
+      font-weight: 800; 
+      margin-bottom: 0; 
+      line-height: 1.4; 
+    }
+    .container { max-width: 1100px; margin: -30px auto 0; padding: 0 20px 60px; position: relative; z-index: 2; }
     .section { margin-bottom: 36px; }
     .section-header {
       display: flex;
@@ -205,7 +209,7 @@
     .footer strong { color: var(--accent-dark); }
 
     @media (max-width: 600px) {
-      .hero h1 { font-size: 22px; }
+      .hero h1 { font-size: 20px; }
       .cards { grid-template-columns: 1fr; }
       .social-grid { gap: 12px; }
       .social-btn { width: 64px; height: 64px; }
@@ -224,8 +228,8 @@
           <path d="M50 5v15M15 25l15 7M85 25l-15 7" stroke="#fff" stroke-width="2"/>
         </svg>
       </div>
+      <span style="display: inline-block; font-size: 13px; background: rgba(201,162,39,0.15); color: var(--accent); padding: 4px 14px; border-radius: 20px; margin-bottom: 12px; font-weight: 600;">حكومة رأس الخيمة</span>
       <h1>البوابة المعرفية للأمانة العامة للمجلس التنفيذي</h1>
-      <p>رأس الخيمة</p>
     </div>
   </header>
 
