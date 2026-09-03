@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>البوابة المعرفية للأمانة العامة</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --primary: #1a1a2e;
@@ -20,7 +22,13 @@
       --radius: 16px;
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: 'Tajawal', sans-serif;
       background: var(--bg);
@@ -28,6 +36,7 @@
       line-height: 1.6;
       min-height: 100vh;
     }
+
     .hero {
       background: linear-gradient(135deg, var(--primary) 0%, #16213e 100%);
       color: white;
@@ -36,25 +45,39 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero::before {
       content: '';
       position: absolute;
-      top: -50%; right: -20%;
-      width: 600px; height: 600px;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
       background: radial-gradient(circle, rgba(201,162,39,0.12) 0%, transparent 70%);
       border-radius: 50%;
     }
+
     .hero::after {
       content: '';
       position: absolute;
-      bottom: -30%; left: -10%;
-      width: 400px; height: 400px;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
       background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
       border-radius: 50%;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
     .logo-wrap {
-      width: 80px; height: 80px;
+      width: 80px;
+      height: 80px;
       background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
       border-radius: 50%;
       margin: 0 auto 16px;
@@ -64,13 +87,33 @@
       box-shadow: 0 8px 32px rgba(139,105,20,0.35);
       animation: float 3s ease-in-out infinite;
     }
+
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
     }
-    .logo-wrap svg { width: 44px; height: 44px; }
-    .container { max-width: 1100px; margin: -30px auto 0; padding: 0 20px 60px; position: relative; z-index: 2; }
-    .section { margin-bottom: 36px; }
+
+    .logo-wrap svg {
+      width: 44px;
+      height: 44px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: -30px auto 0;
+      padding: 0 20px 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .section {
+      margin-bottom: 36px;
+    }
+
     .section-header {
       display: flex;
       align-items: center;
@@ -78,18 +121,26 @@
       margin-bottom: 18px;
       padding-right: 4px;
     }
-    .section-header h2 { font-size: 18px; font-weight: 700; }
+
+    .section-header h2 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
     .section-dot {
-      width: 10px; height: 10px;
+      width: 10px;
+      height: 10px;
       border-radius: 50%;
       background: var(--accent);
       box-shadow: 0 0 0 4px rgba(201,162,39,0.2);
     }
+
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
       gap: 16px;
     }
+
     .card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -106,23 +157,33 @@
       overflow: hidden;
       cursor: pointer;
     }
+
     .card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; height: 4px;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
       background: linear-gradient(90deg, var(--accent), #d4af37);
       transform: scaleX(0);
       transition: transform 0.3s ease;
       transform-origin: right;
     }
+
     .card:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-hover);
       border-color: var(--accent);
     }
-    .card:hover::before { transform: scaleX(1); }
+
+    .card:hover::before {
+      transform: scaleX(1);
+    }
+
     .card-icon {
-      width: 56px; height: 56px;
+      width: 56px;
+      height: 56px;
       border-radius: 14px;
       display: flex;
       align-items: center;
@@ -130,38 +191,116 @@
       margin-bottom: 14px;
       transition: var(--transition);
     }
-    .card:hover .card-icon { transform: scale(1.08) rotate(-2deg); }
-    .card-icon svg { width: 28px; height: 28px; }
-    .card-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
-    .card-desc { font-size: 13px; color: var(--text-light); }
+
+    .card:hover .card-icon {
+      transform: scale(1.08) rotate(-2deg);
+    }
+
+    .card-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
     .badge {
       position: absolute;
-      top: 14px; left: 14px;
+      top: 14px;
+      left: 14px;
       font-size: 11px;
       padding: 3px 10px;
       border-radius: 20px;
       font-weight: 700;
     }
-    .badge-new { background: #dcfce7; color: #166534; }
-    .badge-internal { background: #fef3c7; color: #92400e; }
-    .badge-external { background: #dbeafe; color: #1e40af; }
-    .badge-sharepoint { background: #f3e8ff; color: #7c3aed; }
-    .badge-pdf { background: #fee2e2; color: #b91c1c; }
-    .badge-docx { background: #dbeafe; color: #1e40af; }
 
-    .gov-gold { background: linear-gradient(135deg, #fdf6e3, #f5e6c8); }
-    .gov-blue { background: linear-gradient(135deg, #e0f2fe, #bae6fd); }
-    .gov-teal { background: linear-gradient(135deg, #ccfbf1, #99f6e4); }
-    .gov-rose { background: linear-gradient(135deg, #ffe4e6, #fecdd3); }
-    .gov-amber { background: linear-gradient(135deg, #fef3c7, #fde68a); }
-    .gov-purple { background: linear-gradient(135deg, #f3e8ff, #e9d5ff); }
-    .gov-slate { background: linear-gradient(135deg, #f1f5f9, #e2e8f0); }
-    .gov-green { background: linear-gradient(135deg, #dcfce7, #bbf7d0); }
-    .gov-red { background: linear-gradient(135deg, #fee2e2, #fecaca); }
-    .gov-orange { background: linear-gradient(135deg, #ffedd5, #fed7aa); }
-    .gov-indigo { background: linear-gradient(135deg, #e0e7ff, #c7d2fe); }
+    .badge-new {
+      background: #dcfce7;
+      color: #166534;
+    }
 
-    .social-section { text-align: center; margin-top: 8px; }
+    .badge-internal {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .badge-external {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .badge-sharepoint {
+      background: #f3e8ff;
+      color: #7c3aed;
+    }
+
+    .badge-pdf {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .badge-docx {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .gov-gold {
+      background: linear-gradient(135deg, #fdf6e3, #f5e6c8);
+    }
+
+    .gov-blue {
+      background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    }
+
+    .gov-teal {
+      background: linear-gradient(135deg, #ccfbf1, #99f6e4);
+    }
+
+    .gov-rose {
+      background: linear-gradient(135deg, #ffe4e6, #fecdd3);
+    }
+
+    .gov-amber {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+    }
+
+    .gov-purple {
+      background: linear-gradient(135deg, #f3e8ff, #e9d5ff);
+    }
+
+    .gov-slate {
+      background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    }
+
+    .gov-green {
+      background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    }
+
+    .gov-red {
+      background: linear-gradient(135deg, #fee2e2, #fecaca);
+    }
+
+    .gov-orange {
+      background: linear-gradient(135deg, #ffedd5, #fed7aa);
+    }
+
+    .gov-indigo {
+      background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+    }
+
+    .social-section {
+      text-align: center;
+      margin-top: 8px;
+    }
+
     .social-grid {
       display: flex;
       gap: 16px;
@@ -169,8 +308,10 @@
       flex-wrap: wrap;
       margin-top: 16px;
     }
+
     .social-btn {
-      width: 72px; height: 72px;
+      width: 72px;
+      height: 72px;
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -180,6 +321,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .social-btn::after {
       content: '';
       position: absolute;
@@ -188,13 +330,41 @@
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .social-btn:hover::after { opacity: 1; }
-    .social-btn:hover { transform: translateY(-6px) scale(1.08); }
-    .social-btn svg { width: 30px; height: 30px; position: relative; z-index: 1; }
-    .yt { background: #ff0000; box-shadow: 0 6px 20px rgba(255,0,0,0.25); }
-    .ig { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); box-shadow: 0 6px 20px rgba(220,39,67,0.25); }
-    .fb { background: #1877f2; box-shadow: 0 6px 20px rgba(24,119,242,0.25); }
-    .x { background: #000; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+
+    .social-btn:hover::after {
+      opacity: 1;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-6px) scale(1.08);
+    }
+
+    .social-btn svg {
+      width: 30px;
+      height: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .yt {
+      background: #ff0000;
+      box-shadow: 0 6px 20px rgba(255,0,0,0.25);
+    }
+
+    .ig {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      box-shadow: 0 6px 20px rgba(220,39,67,0.25);
+    }
+
+    .fb {
+      background: #1877f2;
+      box-shadow: 0 6px 20px rgba(24,119,242,0.25);
+    }
+
+    .x {
+      background: #000;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
 
     .footer {
       text-align: center;
@@ -204,371 +374,756 @@
       font-size: 13px;
       margin-top: 20px;
     }
-    .footer strong { color: var(--accent-dark); }
+
+    .footer strong {
+      color: var(--accent-dark);
+    }
 
     @media (max-width: 600px) {
-      .hero h1 { font-size: 22px; }
-      .cards { grid-template-columns: 1fr; }
-      .social-grid { gap: 12px; }
-      .social-btn { width: 64px; height: 64px; }
+      .hero h1 {
+        font-size: 22px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .social-grid {
+        gap: 12px;
+      }
+
+      .social-btn {
+        width: 64px;
+        height: 64px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <div class="logo-wrap">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M50 5L15 25v50l35 20 35-20V25L50 5z" stroke="#fff" stroke-width="3" fill="none"/>
-          <path d="M50 20L30 32v36l20 12 20-12V32L50 20z" stroke="#fff" stroke-width="2.5" fill="none"/>
-          <rect x="44" y="38" width="12" height="24" rx="2" stroke="#fff" stroke-width="2" fill="none"/>
-          <path d="M50 5v15M15 25l15 7M85 25l-15 7" stroke="#fff" stroke-width="2"/>
-        </svg>
-      </div>
-      <h1 style="font-size: 26px; font-weight: 800; margin-bottom: 6px; line-height: 1.3;">البوابة المعرفية للأمانة العامة</h1>
-      <p style="font-size: 15px; color: var(--accent); font-weight: 600; letter-spacing: 0.5px;">المجلس التنفيذي <span>•</span> رأس الخيمة</p>
+<header class="hero">
+  <div class="hero-content">
+
+    <div class="logo-wrap">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 5L15 25v50l35 20 35-20V25L50 5z"
+              stroke="#fff" stroke-width="3" fill="none"/>
+        <path d="M50 20L30 32v36l20 12 20-12V32L50 20z"
+              stroke="#fff" stroke-width="2.5" fill="none"/>
+        <rect x="44" y="38" width="12" height="24" rx="2"
+              stroke="#fff" stroke-width="2" fill="none"/>
+        <path d="M50 5v15M15 25l15 7M85 25l-15 7"
+              stroke="#fff" stroke-width="2"/>
+      </svg>
     </div>
-  </header>
 
-  <main class="container">
+    <h1 style="font-size:26px;font-weight:800;margin-bottom:6px;line-height:1.3;">
+      البوابة المعرفية للأمانة العامة
+    </h1>
 
-    <!-- 1. رأس الخيمة والقيادة -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>رأس الخيمة والقيادة</h2></div>
-      <div class="cards">
-        <a class="card" href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%B1%D8%A4%D9%8A%D8%A9%20%D8%B1%D8%A3%D8%B3%20%D8%A7%D9%84%D8%AE%D9%8A%D9%85%D8%A9%202030?d=w450816a6a70d45538d7e6a6b7b65751a&csf=1&web=1&e=XaxWkt&xsdata=MDV8MDJ8fDM0MzVjYTc4ZTY2ZTRmZGY2NWZhMDhkZjA5NzcwNGY4fDA3ZDFkYjI4YWE4YTQ1YjM4MjJiMjBiY2FiMTgwOGNkfDB8MHw2MzkyNDAwNzg4OTkwNDU4ODJ8VW5rbm93bnxWR1ZoYlhOVFpXTjFjbWwwZVZObGNuWnBZMlY4ZXlKRFFTSTZJbFJsWVcxelgwRlVVRk5sY25acFkyVmZVMUJQVEU5R0lpd2lWaUk2SWpBdU1DNHdNREF3SWl3aVVDSTZJbGRwYmpNeUlpd2lRVTRpT2lKUGRHaGxjaUlzSWxkVUlqb3hNWDA9fDF8TDJOb1lYUnpMekU1T2pKall6SmxZalEzTFRjM01HUXROREl5TmkwNFltWTJMV0UzWldZeE0yUmlOV1JtTjE4NVpUSmlOelppTlMweE5tTmpMVFJrWVRFdFlXUXpNaTB3TVdFeE5tUTJOMk5oTm1aQWRXNXhMbWRpYkM1emNHRmpaWE12YldWemMyRm5aWE12TVRjNE9EUXhNVEE0T0RrMk1RPT18NjI0YTI2OTA0M2ZhNDQwMWU3NjMwOGRmMDk3NzA0Zjd8MThiMjkzZDkzMWMxNDc1MWI2NmYwZjdiYjM1NTI1ZDc%3D&sdata=MmZ3d1BpWVNDRXhPQ2xXQm42aG5BV0dyb3BMQk5NRG1QUmMzL1M4UkNncz0%3D&ovuser=07d1db28-aa8a-45b3-822b-20bcab1808cd%2Ckareem.b%40ec.rak.ae" target="_blank">
-          <span class="badge badge-sharepoint">SharePoint</span>
-          <div class="card-icon gov-gold">
-            <svg fill="none" stroke="#92400e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M12 2l2.7 5.5L21 8.4l-4.5 4.3 1.1 6.1L12 16l-5.6 2.8 1.1-6.1L3 8.4l6.3-.9L12 2z"/>
-            </svg>
-          </div>
-          <div class="card-title">رؤية رأس الخيمة 2030</div>
-          <div class="card-desc">المرجع الاستراتيجي للإمارة</div>
-        </a>
-      </div>
-    </section>
+    <p style="font-size:15px;color:var(--accent);font-weight:600;letter-spacing:.5px;">
+      المجلس التنفيذي <span>•</span> رأس الخيمة
+    </p>
 
-    <!-- 2. المجلس التنفيذي والأمانة العامة -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>المجلس التنفيذي والأمانة العامة</h2></div>
-      <div class="cards">
-        <a class="card" href="https://ec.rak.ae" target="_blank">
-          <div class="card-icon gov-purple">
-            <svg fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-            </svg>
-          </div>
-          <div class="card-title">موقع المجلس التنفيذي</div>
-          <div class="card-desc">يشمل موقع الأمانة العامة</div>
-        </a>
-        <a class="card" href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A5%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A3%D9%85%D8%A7%D9%86%D8%A9?d=w15c3ca7c4edb4ac4ac343b3b57faf729&csf=1&web=1&e=Oe2iDf" target="_blank">
-          <span class="badge badge-sharepoint">SharePoint</span>
-          <div class="card-icon gov-purple">
-            <svg fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <div class="card-title">إستراتيجية الأمانة</div>
-          <div class="card-desc">مجلد إستراتيجية الأمانة العامة</div>
-        </a>
-      </div>
-    </section>
+  </div>
+</header>
 
-    <!-- 3. مواقع تواصل الاجتماعي للأمانة العامة -->
-    <section class="section social-section">
-      <div class="section-header" style="justify-content:center;"><span class="section-dot"></span><h2>مواقع تواصل الاجتماعي للأمانة العامة</h2></div>
-      <div class="social-grid">
-        <a class="social-btn yt" href="https://www.youtube.com/@gsecrak" target="_blank" title="يوتيوب">
-          <svg viewBox="0 0 24 24" fill="#fff"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81zM9.55 15.5V8.5l6.27 3.5-6.27 3.5z"/></svg>
-        </a>
-        <a class="social-btn ig" href="https://www.instagram.com/gsecrak" target="_blank" title="انستغرام">
-          <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.25-.15-4.77-1.69-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.15-3.23 1.66-4.77 4.92-4.92 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.35 2.63 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.63 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C22.73 2.7 20.3.27 15.95.07 14.67.01 14.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
-        </a>
-        <a class="social-btn fb" href="https://www.facebook.com/gsecrak" target="_blank" title="فيسبوك">
-          <svg viewBox="0 0 24 24" fill="#fff"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
-        </a>
-        <a class="social-btn x" href="https://x.com/gsecrak" target="_blank" title="اكس (تويتر)">
-          <svg viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-        </a>
-      </div>
-    </section>
+<main class="container">
 
-    <!-- 4. الاستراتيجية والأداء الحكومي -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>الاستراتيجية والأداء الحكومي</h2></div>
-      <div class="cards">
-        <a class="card" href="http://egaqlickprd.ega.lan/" target="_blank">
-          <span class="badge badge-internal">شبكة داخلية</span>
-          <div class="card-icon gov-slate">
-            <svg fill="none" stroke="#475569" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-            </svg>
-          </div>
-          <div class="card-title">نظام إدارة الأداء</div>
-          <div class="card-desc">egaqlickprd.ega.lan</div>
-        </a>
-        <a class="card" href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D9%86%D9%85%D8%A7%D8%B0%D8%AC%20%D8%A7%D9%84%D8%A5%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9?d=wa72d334da83c4c0588170320bba92813&csf=1&web=1&e=RylO0q" target="_blank">
-          <span class="badge badge-sharepoint">SharePoint</span>
-          <div class="card-icon gov-amber">
-            <svg fill="none" stroke="#b45309" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <div class="card-title">النماذج الإستراتيجية</div>
-          <div class="card-desc">مجلد نماذج الإستراتيجية</div>
-        </a>
-      </div>
-    </section>
+  <!-- 1. رأس الخيمة والقيادة -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>رأس الخيمة والقيادة</h2>
+    </div>
 
-    <!-- 5. العملية التشريعة -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>العملية التشريعة</h2></div>
-      <div class="cards">
-        <a class="card" href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D9%86%D9%85%D8%A7%D8%B0%D8%AC%20%D8%A7%D8%AA%D9%84%D8%B4%D8%B1%D9%8A%D8%B9?d=w5ee8034c65dd4f1fa75aab996943063d&csf=1&web=1&e=0Zym5W" target="_blank">
-          <span class="badge badge-sharepoint">SharePoint</span>
-          <div class="card-icon gov-green">
-            <svg fill="none" stroke="#15803d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <div class="card-title">نماذج التشريع</div>
-          <div class="card-desc">مجلد نماذج التشريع</div>
-        </a>
-        <a class="card" href="https://www.rak.ae/wps/portal/rak/legislative-committee/" target="_blank">
-          <div class="card-icon gov-gold">
-            <svg fill="none" stroke="#92400e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <div class="card-title">موقع اللجنة التشريعية</div>
-          <div class="card-desc">التشريعات والقوانين</div>
-        </a>
-      </div>
-    </section>
+    <div class="cards">
 
-    <!-- 6. السياسات و المنهجيات و الأدلة -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>السياسات و المنهجيات و الأدلة</h2></div>
-      <div class="cards">
-        <a class="card" href="دليل الشراكات.pdf" target="_blank">
-          <span class="badge badge-pdf">PDF</span>
-          <div class="card-icon gov-blue">
-            <svg fill="none" stroke="#0369a1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-          </div>
-          <div class="card-title">دليل الشراكات</div>
-          <div class="card-desc">دليل الشراكات.pdf</div>
-        </a>
-        <a class="card" href="دليل ادارة العلاقات مع المعنيين.pdf" target="_blank">
-          <span class="badge badge-pdf">PDF</span>
-          <div class="card-icon gov-blue">
-            <svg fill="none" stroke="#0369a1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-          </div>
-          <div class="card-title">دليل إدارة العلاقات مع المعنيين</div>
-          <div class="card-desc">دليل ادارة العلاقات مع المعنيين.pdf</div>
-        </a>
-        <a class="card" href="دليل الإدارة بالنتائج.pdf" target="_blank">
-          <span class="badge badge-pdf">PDF</span>
-          <div class="card-icon gov-blue">
-            <svg fill="none" stroke="#0369a1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-          </div>
-          <div class="card-title">دليل الإدارة بالنتائج</div>
-          <div class="card-desc">دليل الإدارة بالنتائج.pdf</div>
-        </a>
-        <a class="card" href="سياسة اختيار المشاريع.docx" target="_blank">
-          <span class="badge badge-docx">DOCX</span>
-          <div class="card-icon gov-teal">
-            <svg fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <div class="card-title">سياسة اختيار المشاريع</div>
-          <div class="card-desc">سياسة اختيار المشاريع.docx</div>
-        </a>
-        <a class="card" href="سياسة نشر التشريعات.docx" target="_blank">
-          <span class="badge badge-docx">DOCX</span>
-          <div class="card-icon gov-teal">
-            <svg fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-          <div class="card-title">سياسة نشر التشريعات</div>
-          <div class="card-desc">سياسة نشر التشريعات.docx</div>
-        </a>
-        <a class="card" href="AI Strategy.pdf" target="_blank">
-          <span class="badge badge-pdf">PDF</span>
-          <div class="card-icon gov-indigo">
-            <svg fill="none" stroke="#4338ca" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M12 6v6l4 2"/>
-            </svg>
-          </div>
-          <div class="card-title">إعداد الخطط الإستراتيجية بالذكاء الاصطناعي</div>
-          <div class="card-desc">AI Strategy.pdf</div>
-        </a>
-      </div>
-    </section>
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%B1%D8%A4%D9%8A%D8%A9%20%D8%B1%D8%A3%D8%B3%20%D8%A7%D9%84%D8%AE%D9%8A%D9%85%D8%A9%202030?d=w450816a6a70d45538d7e6a6b7b65751a&csf=1&web=1&e=XaxWkt"
+         target="_blank">
 
-    <!-- 7. الأنظمة والخدمات الرقمية الداخلية -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>الأنظمة والخدمات الرقمية الداخلية</h2></div>
-      <div class="cards">
-        <a class="card" href="https://hcm22.sapsf.com/login?company=rasalkhaimP3" target="_blank">
-          <span class="badge badge-internal">شبكة داخلية</span>
-          <div class="card-icon gov-slate">
-            <svg fill="none" stroke="#475569" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-            </svg>
-          </div>
-          <div class="card-title">نظام مواردنا</div>
-          <div class="card-desc">SuccessFactors</div>
-        </a>
-        <a class="card" href="https://ec.rak.ae/rakportalgate/" target="_blank">
-          <span class="badge badge-internal">شبكة داخلية</span>
-          <div class="card-icon gov-green">
-            <svg fill="none" stroke="#15803d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2"/>
-              <line x1="8" y1="21" x2="16" y2="21"/>
-              <line x1="12" y1="17" x2="12" y2="21"/>
-              <circle cx="12" cy="10" r="2"/>
-              <path d="M12 8v-2"/>
-              <path d="M10 10h-2"/>
-              <path d="M14 10h2"/>
-              <path d="M12 12v2"/>
-            </svg>
-          </div>
-          <div class="card-title">إدارة محتوى الموقع</div>
-          <div class="card-desc">ec.rak.ae</div>
-        </a>
-        <a class="card" href="https://onedrive.live.com/login" target="_blank">
-          <span class="badge badge-external">خارجي</span>
-          <div class="card-icon gov-blue">
-            <svg fill="none" stroke="#0369a1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M17.5 19c0-1.7-1.3-3-3-3h-11a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h11c1.7 0 3 1.3 3 3v11z"/>
-              <path d="M17.5 19V8c0-1.7 1.3-3 3-3s3 1.3 3 3v11c0 1.7-1.3 3-3 3s-3-1.3-3-3z"/>
-            </svg>
-          </div>
-          <div class="card-title">OneDrive</div>
-          <div class="card-desc">ملفاتي في السحابة</div>
-        </a>
-        <a class="card" href="https://app.powerbi.com/" target="_blank">
-          <span class="badge badge-external">خارجي</span>
-          <div class="card-icon gov-teal">
-            <svg fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>
-            </svg>
-          </div>
-          <div class="card-title">Power BI</div>
-          <div class="card-desc">تطبيقاتي في Power Bi</div>
-        </a>
-      </div>
-    </section>
+        <span class="badge badge-sharepoint">SharePoint</span>
 
-    <!-- 8. المتعاملون -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>المتعاملون</h2></div>
-      <div class="cards">
-        <a class="card" href="https://rakdigital.rak.ae/ecservices/lodge-complaint" target="_blank">
-          <div class="card-icon gov-rose">
-            <svg fill="none" stroke="#be123c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <div class="card-title">تقديم شكوى</div>
-          <div class="card-desc">Lodge eComplaint</div>
-        </a>
-        <a class="card" href="https://rakdigital.rak.ae/ecservices/lodge-suggestion" target="_blank">
-          <div class="card-icon gov-amber">
-            <svg fill="none" stroke="#a16207" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <div class="card-title">تقديم اقتراح</div>
-          <div class="card-desc">Lodge Suggestion</div>
-        </a>
-        <a class="card" href="http://rakecm.ega.lan:9080/navigator/?desktop=Portal" target="_blank">
-          <span class="badge badge-internal">شبكة داخلية</span>
-          <div class="card-icon gov-red">
-            <svg fill="none" stroke="#b91c1c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-            </svg>
-          </div>
-          <div class="card-title">إدارة الشكاوي والاقتراحات</div>
-          <div class="card-desc">rakecm.ega.lan</div>
-        </a>
-        <a class="card" href="https://app.powerbi.com/links/d98Z3t1tA1?ctid=07d1db28-aa8a-45b3-822b-20bcab1808cd&pbi_source=linkShare&login_hint=kareem.b@ec.rak.ae" target="_blank">
-          <span class="badge badge-external">خارجي</span>
-          <div class="card-icon gov-teal">
-            <svg fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/>
-            </svg>
-          </div>
-          <div class="card-title">تقرير الشكاوي</div>
-          <div class="card-desc">Power BI Dashboard</div>
-        </a>
-        <a class="card" href="https://rakdcx2025.streamlit.app/" target="_blank">
-          <span class="badge badge-external">خارجي</span>
-          <div class="card-icon gov-blue">
-            <svg fill="none" stroke="#0369a1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/>
-            </svg>
-          </div>
-          <div class="card-title">تقرير المتعامل 2025</div>
-          <div class="card-desc">Streamlit Dashboard</div>
-        </a>
-      </div>
-    </section>
+        <div class="card-icon gov-gold">
+          <svg fill="none" stroke="#92400e" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M12 2l2.7 5.5L21 8.4l-4.5 4.3 1.1 6.1L12 16l-5.6 2.8 1.1-6.1L3 8.4l6.3-.9L12 2z"/>
+          </svg>
+        </div>
 
-    <!-- 9. الجهات والروابط الحكومية -->
-    <section class="section">
-      <div class="section-header"><span class="section-dot"></span><h2>الجهات والروابط الحكومية</h2></div>
-      <div class="cards">
-        <a class="card" href="https://rakdigital.rak.ae/index.html" target="_blank">
-          <span class="badge badge-new">جديد</span>
-          <div class="card-icon gov-teal">
-            <svg fill="none" stroke="#0f766e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
-            </svg>
-          </div>
-          <div class="card-title">البوابة الحكومية الجديدة</div>
-          <div class="card-desc">rakdigital.rak.ae</div>
-        </a>
-        <a class="card" href="https://rak.ae" target="_blank">
-          <div class="card-icon gov-blue">
-            <svg fill="none" stroke="#0369a1" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-            </svg>
-          </div>
-          <div class="card-title">البوابة الحكومية القديمة</div>
-          <div class="card-desc">rak.ae</div>
-        </a>
-        <a class="card" href="https://www.rakmediaoffice.ae/ar/" target="_blank">
-          <div class="card-icon gov-orange">
-            <svg fill="none" stroke="#c2410c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-            </svg>
-          </div>
-          <div class="card-title">الموقع الإعلامي</div>
-          <div class="card-desc">rakmediaoffice.ae</div>
-        </a>
-      </div>
-    </section>
+        <div class="card-title">رؤية رأس الخيمة 2030</div>
+        <div class="card-desc">المرجع الاستراتيجي للإمارة</div>
 
-  </main>
+      </a>
 
-  <footer class="footer">
-    الأمانة العامة للمجلس التنفيذي — <strong>حكومة رأس الخيمة</strong> © 2026
-  </footer>
+    </div>
+  </section>
+
+
+  <!-- 2. المجلس التنفيذي والأمانة العامة -->
+  <section class="section">
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>المجلس التنفيذي والأمانة العامة</h2>
+    </div>
+
+    <div class="cards">
+
+      <a class="card"
+         href="https://www.rak.ae/wps/portal/rak/executive-council"
+         target="_blank">
+
+        <div class="card-icon gov-purple">
+          <svg fill="none" stroke="#7c3aed" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+
+        <div class="card-title">موقع المجلس التنفيذي</div>
+        <div class="card-desc">يشمل موقع الأمانة العامة</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A5%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9%20%D8%A7%D9%84%D8%A3%D9%85%D8%A7%D9%86%D8%A9?d=w15c3ca7c4edb4ac4ac343b3b57faf729&csf=1&web=1&e=Oe2iDf"
+         target="_blank">
+
+        <span class="badge badge-sharepoint">SharePoint</span>
+
+        <div class="card-icon gov-purple">
+          <svg fill="none" stroke="#7c3aed" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">إستراتيجية الأمانة</div>
+        <div class="card-desc">مجلد إستراتيجية الأمانة العامة</div>
+
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- 3. مواقع التواصل الاجتماعي -->
+  <section class="section social-section">
+
+    <div class="section-header" style="justify-content:center;">
+      <span class="section-dot"></span>
+      <h2>مواقع التواصل الاجتماعي للأمانة العامة</h2>
+    </div>
+
+    <div class="social-grid">
+
+      <a class="social-btn yt"
+         href="https://www.youtube.com/@gsecrak"
+         target="_blank"
+         title="يوتيوب">
+        <svg viewBox="0 0 24 24" fill="#fff">
+          <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 0 0 .5 6.19 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.81 3.02 3.02 0 0 0 2.12 2.14c1.88.55 9.38.55 9.38.55s7.5 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.81zM9.55 15.5V8.5l6.27 3.5-6.27 3.5z"/>
+        </svg>
+      </a>
+
+      <a class="social-btn ig"
+         href="https://www.instagram.com/gsecrak"
+         target="_blank"
+         title="انستغرام">
+        <svg viewBox="0 0 24 24" fill="#fff">
+          <path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-3.25-.15-4.77-1.69-4.92-4.92-.06-1.28-.07-1.69-.07-4.95s.01-3.67.07-4.95C2.27 2.7 4.7.27 9.05.07 10.33.01 10.74 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.85-10.4a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+        </svg>
+      </a>
+
+      <a class="social-btn fb"
+         href="https://www.facebook.com/gsecrak"
+         target="_blank"
+         title="فيسبوك">
+        <svg viewBox="0 0 24 24" fill="#fff">
+          <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.12 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/>
+        </svg>
+      </a>
+
+      <a class="social-btn x"
+         href="https://x.com/gsecrak"
+         target="_blank"
+         title="اكس">
+        <svg viewBox="0 0 24 24" fill="#fff">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- 4. الاستراتيجية والأداء الحكومي -->
+  <section class="section">
+
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>الاستراتيجية والأداء الحكومي</h2>
+    </div>
+
+    <div class="cards">
+
+      <a class="card"
+         href="http://egaqlickprd.ega.lan/"
+         target="_blank">
+
+        <span class="badge badge-internal">شبكة داخلية</span>
+
+        <div class="card-icon gov-slate">
+          <svg fill="none" stroke="#475569" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+          </svg>
+        </div>
+
+        <div class="card-title">نظام إدارة الأداء</div>
+        <div class="card-desc">egaqlickprd.ega.lan</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D9%86%D9%85%D8%A7%D8%B0%D8%AC%20%D8%A7%D9%84%D8%A5%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%D9%8A%D8%AC%D9%8A%D8%A9?d=wa72d334da83c4c0588170320bba92813&csf=1&web=1&e=RylO0q"
+         target="_blank">
+
+        <span class="badge badge-sharepoint">SharePoint</span>
+
+        <div class="card-icon gov-amber">
+          <svg fill="none" stroke="#b45309" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">النماذج الإستراتيجية</div>
+        <div class="card-desc">مجلد نماذج الإستراتيجية</div>
+
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- 5. العملية التشريعية -->
+  <section class="section">
+
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>العملية التشريعية</h2>
+    </div>
+
+    <div class="cards">
+
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:f:/r/personal/ahmed_su_ec_rak_ae/Documents/%D9%86%D9%85%D8%A7%D8%B0%D8%AC%20%D8%A7%D8%AA%D9%84%D8%B4%D8%B1%D9%8A%D8%B9?d=w5ee8034c65dd4f1fa75aab996943063d&csf=1&web=1&e=0Zym5W"
+         target="_blank">
+
+        <span class="badge badge-sharepoint">SharePoint</span>
+
+        <div class="card-icon gov-green">
+          <svg fill="none" stroke="#15803d" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">نماذج التشريع</div>
+        <div class="card-desc">مجلد نماذج التشريع</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://www.rak.ae/wps/portal/rak/legislative-committee/"
+         target="_blank">
+
+        <div class="card-icon gov-gold">
+          <svg fill="none" stroke="#92400e" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+            <polyline points="10 9 9 9 8 9"/>
+          </svg>
+        </div>
+
+        <div class="card-title">موقع اللجنة التشريعية</div>
+        <div class="card-desc">التشريعات والقوانين</div>
+
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- 6. السياسات والمنهجيات والأدلة -->
+  <section class="section">
+
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>السياسات والمنهجيات والأدلة</h2>
+    </div>
+
+    <div class="cards">
+
+      <!-- دليل الشراكات -->
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:b:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%B4%D8%B1%D8%A7%D9%83%D8%A7%D8%AA.pdf?d=w9b3b452c3835426e91372a1b302c939e&csf=1&web=1&e=5p9SOA"
+         target="_blank">
+
+        <span class="badge badge-pdf">PDF</span>
+
+        <div class="card-icon gov-blue">
+          <svg fill="none" stroke="#0369a1" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">دليل الشراكات</div>
+        <div class="card-desc">دليل الشراكات.pdf</div>
+
+      </a>
+
+
+      <!-- دليل إدارة العلاقات مع المعنيين -->
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:b:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B9%D9%84%D8%A7%D9%82%D8%A7%D8%AA%20%D9%85%D8%B9%20%D8%A7%D9%84%D9%85%D8%B9%D9%86%D9%8A%D9%8A%D9%86.pdf?d=we16f11389caa4558b3db3265ebd02eba&csf=1&web=1&e=8s0gDr"
+         target="_blank">
+
+        <span class="badge badge-pdf">PDF</span>
+
+        <div class="card-icon gov-blue">
+          <svg fill="none" stroke="#0369a1" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">دليل إدارة العلاقات مع المعنيين</div>
+        <div class="card-desc">دليل إدارة العلاقات مع المعنيين.pdf</div>
+
+      </a>
+
+
+      <!-- دليل الإدارة بالنتائج -->
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:b:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA/%D8%AF%D9%84%D9%8A%D9%84%20%D8%A7%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%A8%D8%A7%D9%84%D9%86%D8%AA%D8%A7%D8%A6%D8%AC.pdf?d=wdab5aec234f8463680c88224975f3f10&csf=1&web=1&e=5BltcH"
+         target="_blank">
+
+        <span class="badge badge-pdf">PDF</span>
+
+        <div class="card-icon gov-blue">
+          <svg fill="none" stroke="#0369a1" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">دليل الإدارة بالنتائج</div>
+        <div class="card-desc">دليل الإدارة بالنتائج.pdf</div>
+
+      </a>
+
+
+      <!-- سياسة اختيار المشاريع -->
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:w:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9%20%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1%20%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9.docx?d=w3a84faf457c64861ab6fffdd7943464e&csf=1&web=1&e=glt0Fu"
+         target="_blank">
+
+        <span class="badge badge-docx">DOCX</span>
+
+        <div class="card-icon gov-teal">
+          <svg fill="none" stroke="#0f766e" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+
+        <div class="card-title">سياسة اختيار المشاريع</div>
+        <div class="card-desc">سياسة اختيار المشاريع.docx</div>
+
+      </a>
+
+
+      <!-- سياسة نشر التشريعات -->
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:w:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA/%D8%B3%D9%8A%D8%A7%D8%B3%D8%A9%20%D9%86%D8%B4%D8%B1%20%D8%A7%D9%84%D8%AA%D8%B4%D8%B1%D9%8A%D8%B9%D8%A7%D8%AA.docx?d=wf8d43da34b9644f39d5c3eb474de754c&csf=1&web=1&e=e1TPxH"
+         target="_blank">
+
+        <span class="badge badge-docx">DOCX</span>
+
+        <div class="card-icon gov-teal">
+          <svg fill="none" stroke="#0f766e" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" y1="13" x2="8" y2="13"/>
+            <line x1="16" y1="17" x2="8" y2="17"/>
+          </svg>
+        </div>
+
+        <div class="card-title">سياسة نشر التشريعات</div>
+        <div class="card-desc">سياسة نشر التشريعات.docx</div>
+
+      </a>
+
+
+      <!-- AI Strategy -->
+      <a class="card"
+         href="https://egarakae-my.sharepoint.com/:b:/r/personal/ahmed_su_ec_rak_ae/Documents/%D8%A7%D9%84%D8%A3%D8%AF%D9%84%D8%A9%20%D9%88%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%B3%D8%A7%D8%AA/AI%20Strategy.pdf?d=wc826c047b9f645caa2eb4cf1ea21fb71&csf=1&web=1&e=XHO67G"
+         target="_blank">
+
+        <span class="badge badge-pdf">PDF</span>
+
+        <div class="card-icon gov-indigo">
+          <svg fill="none" stroke="#4338ca" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+
+        <div class="card-title">
+          إعداد الخطط الإستراتيجية باستخدام الذكاء الاصطناعي
+        </div>
+
+        <div class="card-desc">AI Strategy.pdf</div>
+
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- 7. الأنظمة والخدمات الرقمية الداخلية -->
+  <section class="section">
+
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>الأنظمة والخدمات الرقمية الداخلية</h2>
+    </div>
+
+    <div class="cards">
+
+      <a class="card"
+         href="https://hcm22.sapsf.com/login?company=rasalkhaimP3"
+         target="_blank">
+
+        <span class="badge badge-internal">شبكة داخلية</span>
+
+        <div class="card-icon gov-slate">
+          <svg fill="none" stroke="#475569" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <rect x="2" y="7" width="20" height="14" rx="2"/>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+          </svg>
+        </div>
+
+        <div class="card-title">نظام مواردنا</div>
+        <div class="card-desc">SuccessFactors</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://ec.rak.ae/rakportalgate/"
+         target="_blank">
+
+        <span class="badge badge-internal">شبكة داخلية</span>
+
+        <div class="card-icon gov-green">
+          <svg fill="none" stroke="#15803d" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+            <circle cx="12" cy="10" r="2"/>
+            <path d="M12 8v-2"/>
+            <path d="M10 10h-2"/>
+            <path d="M14 10h2"/>
+            <path d="M12 12v2"/>
+          </svg>
+        </div>
+
+        <div class="card-title">إدارة محتوى الموقع</div>
+        <div class="card-desc">ec.rak.ae</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://onedrive.live.com/login"
+         target="_blank">
+
+        <span class="badge badge-external">خارجي</span>
+
+        <div class="card-icon gov-blue">
+          <svg fill="none" stroke="#0369a1" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M17.5 19c0-1.7-1.3-3-3-3h-11a3 3 0 0 1-3-3V8a3 3 0 0 1 3-3h11c1.7 0 3 1.3 3 3v11z"/>
+            <path d="M17.5 19V8c0-1.7 1.3-3 3-3s3 1.3 3 3v11c0 1.7-1.3 3-3 3s-3-1.3-3-3z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">OneDrive</div>
+        <div class="card-desc">ملفاتي في السحابة</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://app.powerbi.com/"
+         target="_blank">
+
+        <span class="badge badge-external">خارجي</span>
+
+        <div class="card-icon gov-teal">
+          <svg fill="none" stroke="#0f766e" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">Power BI</div>
+        <div class="card-desc">تطبيقاتي في Power BI</div>
+
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- 8. المتعاملون -->
+  <section class="section">
+
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>المتعاملون</h2>
+    </div>
+
+    <div class="cards">
+
+      <!-- تقديم شكوى -->
+      <a class="card"
+         href="https://www.rak.ae/wps/portal/rak/generalservices/e-complaints/lodge-complaint/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziTQwNjYwsTQx9LQwsLA0cvYINw8KcnQwtXc30w8EKLDzczYzcDYx8DSxMDAzMvEO8LD38zAws3E30o4jRj0OBhwWR-g1wAEcDwvqj0JS4O5oClZj7mAZaunka-JpBFeDzIj5LwH4AK8DjyODEIv2C3NDQCINMT11HRUUAwmKMpA!!/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/">
+        
+        <div class="card-icon gov-rose">
+          <svg fill="none" stroke="#be123c" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="12" y1="8" x2="12" y2="12"/>
+            <line x1="12" y1="16" x2="12.01" y2="16"/>
+          </svg>
+        </div>
+
+        <div class="card-title">تقديم شكوى</div>
+        <div class="card-desc">Lodge eComplaint</div>
+
+      </a>
+
+
+      <!-- تقديم اقتراح -->
+      <a class="card"
+         href="https://www.rak.ae/wps/portal/rak/generalservices/e-suggestion/lodge-Suggestion/!ut/p/z1/jY_BCoJAEEC_xQ-InR3Wdfa4elhdMxHTai-xpxDKIqLvTzwIhZVzG3iPmccc2zPX-2d38o_u2vvzsB-cPArOEZXghYnCELSN122iJZaIbDcClBqJBrAAEgAy31qVbiSQEcwt8SeAgNQA1Lxtk5intNCHL6Phv-9GZCogayVUWaEM5RWvyugTmEl8PzLTMAI_nqz9nd0uTbOHLlvpIHgBpdxOfg!!/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/">
+
+        <div class="card-icon gov-amber">
+          <svg fill="none" stroke="#a16207" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">تقديم اقتراح</div>
+        <div class="card-desc">Lodge Suggestion</div>
+
+      </a>
+
+
+      <a class="card"
+         href="http://rakecm.ega.lan:9080/navigator/?desktop=Portal"
+         target="_blank">
+
+        <span class="badge badge-internal">شبكة داخلية</span>
+
+        <div class="card-icon gov-red">
+          <svg fill="none" stroke="#b91c1c" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">إدارة الشكاوي والاقتراحات</div>
+        <div class="card-desc">rakecm.ega.lan</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://app.powerbi.com/links/d98Z3t1tA1?ctid=07d1db28-aa8a-45b3-822b-20bcab1808cd&pbi_source=linkShare&login_hint=kareem.b@ec.rak.ae"
+         target="_blank">
+
+        <span class="badge badge-external">خارجي</span>
+
+        <div class="card-icon gov-teal">
+          <svg fill="none" stroke="#0f766e" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M21.21 15.89A10 10 0 1 1 8 2.83"/>
+            <path d="M22 12A10 10 0 0 0 12 2v10z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">تقرير الشكاوي</div>
+        <div class="card-desc">Power BI Dashboard</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://rakdcx2025.streamlit.app/"
+         target="_blank">
+
+        <span class="badge badge-external">خارجي</span>
+
+        <div class="card-icon gov-blue">
+          <svg fill="none" stroke="#0369a1" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M3 3v18h18"/>
+            <path d="M18 17V9"/>
+            <path d="M13 17V5"/>
+            <path d="M8 17v-3"/>
+          </svg>
+        </div>
+
+        <div class="card-title">تقرير المتعامل 2025</div>
+        <div class="card-desc">Streamlit Dashboard</div>
+
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- 9. الجهات والروابط الحكومية -->
+  <section class="section">
+
+    <div class="section-header">
+      <span class="section-dot"></span>
+      <h2>الجهات والروابط الحكومية</h2>
+    </div>
+
+    <div class="cards">
+
+      <a class="card"
+         href="https://rakdigital.rak.ae/index.html"
+         target="_blank">
+
+        <span class="badge badge-new">جديد</span>
+
+        <div class="card-icon gov-teal">
+          <svg fill="none" stroke="#0f766e" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <line x1="8" y1="21" x2="16" y2="21"/>
+            <line x1="12" y1="17" x2="12" y2="21"/>
+          </svg>
+        </div>
+
+        <div class="card-title">البوابة الحكومية الجديدة</div>
+        <div class="card-desc">rakdigital.rak.ae</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://rak.ae"
+         target="_blank">
+
+        <div class="card-icon gov-blue">
+          <svg fill="none" stroke="#0369a1" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+        </div>
+
+        <div class="card-title">البوابة الحكومية القديمة</div>
+        <div class="card-desc">rak.ae</div>
+
+      </a>
+
+
+      <a class="card"
+         href="https://www.rakmediaoffice.ae/ar/"
+         target="_blank">
+
+        <div class="card-icon gov-orange">
+          <svg fill="none" stroke="#c2410c" stroke-width="1.8"
+               stroke-linecap="round" stroke-linejoin="round"
+               viewBox="0 0 24 24">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+
+        <div class="card-title">الموقع الإعلامي</div>
+        <div class="card-desc">rakmediaoffice.ae</div>
+
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer class="footer">
+  الأمانة العامة للمجلس التنفيذي —
+  <strong>حكومة رأس الخيمة</strong>
+  © 2026
+</footer>
 
 </body>
 </html>
